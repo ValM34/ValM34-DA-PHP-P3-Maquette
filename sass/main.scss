@@ -1,0 +1,816 @@
+@import "variables";
+@import "components";
+@import "keyframes";
+@import "mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../../images/50025-parc-monceau.jpg") fixed;
+    background-size: cover;
+    background-position: center top;
+    animation: animation-txt-part 1s ease-in-out both 0.5s;
+}
+
+.section-title {
+    text-align: center;
+    color: $tertiary-color;
+    padding: 10px 0;
+    font-size: 40px;
+    font-family: 'Calligraffitti';
+    margin-bottom: 0px;
+
+    @include desktop-only {
+        width: 1200px;
+    }
+}
+
+.section-title-line {
+    display: block;
+    background-color: $tertiary-color;
+    height: 2px;
+    width: 25%;
+    position: relative;
+    top: -10px;
+}
+
+/* ------------------------------------------------------ section header ------------------------------------------------------*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9bb955;
+    padding-top: 20px;
+    margin-bottom: -100px;
+    width: 1200px;
+
+    @include tablette-only {
+        width: 100%;
+    }
+
+    @include mobile-only {
+        width: 100%;
+    }
+}
+
+#header-container {
+    border-top: 2px solid $primary-color;
+    border-bottom: 2px solid $primary-color;
+    margin-bottom: 28px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    background-color: $tertiary-color;
+
+    @include tablette-only {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-400px);
+        margin-bottom: -300px;
+        transition: transform 0.7s ease-in-out, margin-bottom 0.7s ease-in-out;
+    }
+
+    @include mobile-only {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-400px);
+        margin-bottom: -300px;
+        transition: transform 0.7s ease-in-out, margin-bottom 0.7s ease-in-out;
+    }
+}
+
+#burger-btn {
+    display: none;
+
+    @include tablette-only {
+        display: block;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        z-index: 10;
+    }
+
+    @include mobile-only {
+        display: block;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        z-index: 10;
+    }
+}
+
+.burger-line {
+    display: block;
+    width: 37px;
+    margin-bottom: 9px;
+    height: 3px;
+    background-color: $primary-color;
+}
+
+#burger-btn:focus {
+    transform: translateX(-5000px);
+    margin-bottom: 20px;
+}
+
+#burger-btn>span:nth-child(1):after {
+    content: "";
+    position: relative;
+    display: block;
+    background-color: $primary-color;
+    height: 3px;
+    width: 37px;
+    pointer-events: none;
+}
+
+#burger-btn>span:nth-child(2):after {
+    content: "";
+    position: relative;
+    display: block;
+    background-color: $primary-color;
+    height: 3px;
+    width: 37px;
+    pointer-events: none;
+}
+
+#burger-btn>span:nth-child(3):after {
+    content: "";
+    position: relative;
+    display: block;
+    background-color: $primary-color;
+    height: 3px;
+    width: 37px;
+    pointer-events: none;
+}
+
+#burger-btn:focus>span:nth-child(1):after {
+    animation: animation-burger-menu1 0.5s ease-in-out forwards;
+}
+
+#burger-btn:focus>span:nth-child(2):after {
+    animation: animation-burger-menu2 0.5s ease-in-out forwards;
+}
+
+#burger-btn:focus>span:nth-child(3):after {
+    animation: animation-burger-menu3 0.5s ease-in-out forwards;
+}
+
+#burger-btn:focus+#header-container {
+    transform: translateY(0);
+    margin-bottom: 50px;
+
+    @include tablette-only{
+        margin-bottom: -45px;
+    }
+    @include mobile-only {
+        margin-bottom: -45px;
+    }
+}
+
+.logo {
+    font-family: 'Calligraffitti', 'roboto', 'sans-serif';
+    font-size: 45px;
+    margin-bottom: -20px;
+    color: $primary-color;
+    position: relative;
+    top: -65px;
+    animation: animation-logo 8s linear infinite forwards;
+
+    @include tablette-only {
+        margin-bottom: 50px;
+        top: 7px;
+    }
+
+    @include mobile-only {
+        margin-bottom: 110px;
+        top: 34px;
+        font-size: 25px;
+        left: -12px;
+    }
+}
+
+.logo:after {
+    content: "";
+    border-bottom: 2px solid $primary-color;
+    border-right: 2px solid $primary-color;
+    height: 65px;
+    width: 105%;
+    display: block;
+    position: relative;
+    top: -79px;
+    left: -9px;
+    box-shadow: 5px 5px 5px #fef6e933;
+
+    @include mobile-only {
+        content: "";
+        border-bottom: 2px solid #fef6e9;
+        border-right: 2px solid #fef6e9;
+        height: 37px;
+        width: 108%;
+        display: block;
+        position: relative;
+        top: -45px;
+        left: -9px;
+    }
+}
+
+.logo:before {
+    content: "";
+    border-top: 2px solid $primary-color;
+    border-left: 2px solid $primary-color;
+    height: 65px;
+    width: 105%;
+    display: block;
+    position: relative;
+    top: 63px;
+    left: -5px;
+    box-shadow: -5px -5px 5px #fef6e933;
+
+    @include mobile-only {
+        content: "";
+        border-top: 2px solid #fef6e9;
+        border-left: 2px solid #fef6e9;
+        height: 37px;
+        width: 108%;
+        display: block;
+        position: relative;
+        top: 35px;
+        left: -7px;
+    }
+}
+
+.nav-link {
+    padding: 12px 0;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: $tertiary-color;
+    color: $primary-color;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out 0s, border 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover {
+    background-color: rgb(254, 246, 233);
+    color: rgb(155, 185, 85);
+}
+
+/* ------------------------------------------------------ section presentation ------------------------------------------------------*/
+#presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $secondary-color;
+    padding: 20px 0;
+    background-color: $primary-color;
+}
+
+.presentation-container {
+    max-width: 1200px;
+    padding: 30px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.txt-part {
+    width: 90%;
+    min-height: 100px;
+    margin: 10px 0;
+    padding: 15px 0;
+    background-color: rgb(226 196 144);
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 28%);
+    border-radius: 7px;
+
+    @include desktop-only {
+        margin-bottom: 50px;
+    }
+}
+
+.txt-part>div:nth-child(1) {
+    font-weight: 700;
+
+    @include desktop-only {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+}
+
+.txt-part>div:nth-child(2) {
+    @include desktop-only {
+        text-align: justify;
+    }
+
+}
+
+.img-presentation {
+    width: 70%;
+    border-radius: 5px;
+    background-color: rgba(254, 248, 234, 1);
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 28%);
+    margin-bottom: 10px;
+
+    @include tablette-only {
+        width: 90%;
+        min-height: 100px;
+        box-shadow: 0px 0px 5px rgb(0 0 0 / 28%);
+        margin: 10px 0;
+    }
+
+    @include mobile-only {
+        width: 90%;
+        min-height: 100px;
+        background-color: rgba(254, 248, 234, 1);
+        box-shadow: 0px 0px 5px rgb(0 0 0 / 28%);
+        margin: 10px 0;
+    }
+}
+
+/* ------------------------------------------------------ section programmation ------------------------------------------------------*/
+
+#programmation {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: $secondary-color;
+    width: 100%;
+    max-width: 1200px;
+    color: $text;
+    padding: 30px 0;
+}
+
+#programmation>.section-title {
+    color: $text;
+}
+
+#programmation>.section-title-line {
+    left: 37.5%;
+    background-color: $text;
+}
+
+.programmation-day-container {
+    display: flex;
+
+    @include mobile-only {
+        flex-direction: column;
+    }
+}
+
+.programmation-date {
+    font-weight: 700;
+    padding: 10px 30px;
+    width: 500px;
+    margin-top: 70px;
+    margin-bottom: 15px;
+    font-size: 26px;
+    display: inline-block;
+    background-color: #fef6e9;
+    box-shadow: 0 0 5px black;
+
+    @include mobile-only {
+        width: 100%;
+    }
+}
+
+#programmation>div:nth-child(3)>.programmation-date {
+    margin-top: 50px;
+}
+
+.programmation-film {
+    width: 100%;
+    background-color: black;
+    border: $text solid 3px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.5s ease-in-out;
+
+    @include mobile-only {
+        margin: 10px 0;
+        background-color: transparent;
+        border: none;
+        padding: 0 5px;
+    }
+}
+
+.programmation-film:hover {
+    transform: scale(105%);
+
+    @include mobile-only {
+        transform: scale(100%);
+    }
+}
+
+.programmation-film>img {
+    width: 100%;
+    @include mobile-only{
+        width: auto;
+        max-height: 100vh;
+        max-width: 100%;
+    }
+}
+
+.hour-film {
+    color: $secondary-color;
+    font-size: 24px;
+    font-weight: 700;
+    color: $text;
+    background-color: #fef6e9;
+    border: 2px solid #e2c490;
+    @include mobile-only{
+        border: none;
+    }
+}
+
+/* ------------------------------------------------------ section actualités ------------------------------------------------------*/
+
+#actualites {
+    background-color: $primary-color;
+    width: 1200px;
+    padding: 30px 0;
+    @include tablette-only{
+        width: 100%;
+        padding: 30px 15px;
+    }
+    @include mobile-only{
+        width: 100%;
+        padding: 30px 0px;
+    }
+}
+
+#actualites>.section-title-line {
+    left: 37.5%;
+}
+
+.actualites-container {
+    display: flex;
+    @include mobile-only{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.vignette-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px;
+    text-decoration: none;
+    color: $text;
+    @include tablette-only{
+        margin: 30px 15px;
+    }
+    @include mobile-only{
+        width: 90%;
+        margin: 20px 0;
+        max-width: 400px;
+    }
+}
+
+.vignette-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+}
+
+.vignette-description{
+    text-align: justify;
+
+}
+
+.img-vignette {
+    width: 100%;
+}
+
+/* ------------------------------------------------------ section réservation ------------------------------------------------------*/
+
+#reservation {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-btn {
+    text-decoration: none;
+    color: $primary-color;
+    background-color: $tertiary-color;
+    padding: 15px 30px;
+    width: 800px;
+    border-radius: 50px;
+    box-shadow: 0 0 5px black;
+    font-size: 35px;
+    text-align: center;
+    transition: 0.3s ease-in-out background-color, 0.3s ease-in-out color;
+
+    @include tablette-only {
+        width: 90%;
+        padding: 15px 0;
+    }
+
+    @include mobile-only {
+        width: 90%;
+        padding: 15px 0;
+        font-size: 25px;
+    }
+}
+
+.reservation-btn:hover {
+    text-decoration: none;
+    color: $primary-color;
+    background-color: $text;
+    border-radius: 50px;
+}
+
+.reservation-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color;
+    width: 100vw;
+    max-width: 1200px;
+    height: 100%;
+}
+
+/* ------------------------------------------------------ Page film ------------------------------------------------------*/
+
+#film-page{
+    width: 1200px;
+    background-color: $primary-color;
+    @include tablette-only{
+        width: 100%;
+    }
+    @include mobile-only{
+        width: 100%;
+    }
+}
+
+.affiche-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    @include mobile-only{
+        display: flex;
+        flex-direction:column-reverse;
+        align-items: center;
+    }
+}
+
+.film-description{
+    margin: 30px;
+    padding: 15px;
+}
+
+#page-film-horaires{
+    font-size: 25px;
+    color: $primary-color;
+    background-color: $text;
+    display: block;
+    width: 100%;
+    text-align: center;
+    @include desktop-only{
+        max-width: 1200px;
+    }
+}
+
+.page-film-title{
+    font-family: 'Calligraffitti', 'roboto', 'sans-serif';
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.page-film-text{
+    text-align: justify;
+}
+
+.page-film-img{
+    margin: 30px;
+    border: 2px solid $text;
+    max-height: 500px;
+    @include tablette-only{
+        max-height: none;
+        width: 100%;
+    }
+    @include mobile-only{
+        max-height: none;
+        width: 100%;
+    }
+}
+
+/* ------------------------------------------------------ Page contact ------------------------------------------------------*/
+
+#page-reservation{
+    background-color: $primary-color;
+    width: 1200px;
+    @include tablette-only{
+        width: 100%;
+    }
+    @include mobile-only{
+        width: 100%;
+    }
+}
+
+.page-reservation-title{
+    font-size: 45px;
+    font-family: 'Calligraffitti', 'roboto', 'sans-serif';
+    text-align: center;
+}
+
+.page-reservation-date-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.page-reservation-input-checkbox-container{
+    margin-bottom: 10px;
+    @include mobile-only{
+        margin-left: 5%;
+    }
+}
+
+.page-reservation-input-checkbox-container:nth-child(1){
+    font-weight: 700;
+}
+
+.page-reservation-container{
+    display: flex;
+    justify-content: space-between;
+    @include mobile-only{
+        flex-direction: column;
+    }
+}
+
+.page-reservation-input-checkbox-container>input{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.page-reservation-input-checkbox-container>label{
+    vertical-align: middle;
+}
+
+.page-reservation-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-reservation-contact>label {
+    @include mobile-only{
+        margin-top: 15px;
+    }
+}
+
+#page-reservation>form{
+    padding: 15px;
+    border: solid 2px black;
+    margin: 10px;
+}
+
+#page-reservation>form>div>input{
+    width: 500px;
+    padding: 10px;
+    border: 2px $text solid;
+    @include mobile-only{
+        width: 90%;
+    }
+}
+
+.button-container>button{
+    background-color: $tertiary-color;
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin: 25px 10px 10px 10px;
+    border: none;
+    cursor: pointer;
+    color: $primary-color;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button-container>button:hover{
+    background-color: $text;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------------------------------------------ newsletter ------------------------------------------------------*/
+
+#newsletter{
+    background-color: rgba($primary-color, 0.9);
+    border-top: 4px dashed $text;
+    border-bottom: 4px dashed $text;
+    height: 150px;
+    width: 100vw;
+    max-width: 1200px;
+    @include mobile-only{
+        height: auto;
+        padding: 40px 0 ;
+    }
+}
+
+#newsletter>form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mobile-only{
+        flex-direction: column;
+    }
+}
+
+#newsletter-label{
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 18px;
+    @include mobile-only{
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
+#newsletter-input{
+    height: 35px;
+    width: 250px;
+    padding: 0 10px;
+    border: 1px solid $text;
+    border-radius: 0;
+    margin-right: 10px;
+    font-size: 18px;
+    @include mobile-only{
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 90%;
+        height: 40px;
+    }
+}
+
+#newsletter-input:focus{
+    outline: none;
+    border: 2px solid $text;
+}
+
+#newsletter-btn{
+    height: 35px;
+    width: 250px;
+    padding: 0 10px;
+    background-color: $tertiary-color;
+    border: 2px solid $tertiary-color;
+    color: $primary-color;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    @include mobile-only{
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 90%;
+        height: 40px;
+    }
+}
+
+#newsletter-btn:hover{
+    background-color: $primary-color;
+    color: $tertiary-color;
+}
+
+/* ------------------------------------------------------ footer ------------------------------------------------------*/
+
+footer{
+    background-color: $tertiary-color;
+    width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    @include tablette-only{
+        width: 100%;
+    }
+    @include mobile-only{
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
+.footer-sous-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+

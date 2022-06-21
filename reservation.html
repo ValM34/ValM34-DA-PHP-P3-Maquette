@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <title>Les Films de Plein Air</title>
+</head>
+
+<body>
+    <header>
+        <button id="burger-btn">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+        <div id="header-container">
+            <a href="/index.html" class="nav-link">Accueil</a>
+            <a href="/index.html#presentation" class="nav-link">Présentation</a>
+            <a href="/index.html#programmation" class="nav-link">Programmation</a>
+            <a href="#" class="nav-link">Réservation</a>
+            <a href="/index.html#actualites" class="nav-link">Actualités</a>
+        </div>
+        <div class="logo">Les Films de Plein Air</div>
+    </header>
+
+    <section id="page-reservation">
+        <form>
+            <div class="page-reservation-title">Réservation</div>
+            <div class="page-reservation-container">
+                <div class="page-reservation-date-container">
+                    <div class="page-reservation-input-checkbox-container">Jeudi 5 août</div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film1" id="film1" /><label for="film1">Gladiator</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film2" id="film2" /><label for="film2">Iron-man</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film3" id="film3" /><label for="film3">Skyfall</label>
+                    </div>
+                </div>
+                <div class="page-reservation-date-container">
+                    <div class="page-reservation-input-checkbox-container">Vendredi 6 août</div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film4" id="film4" /><label for="film4">Ça</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film5" id="film5" /><label for="film5">E.T.</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film6" id="film6" /><label for="film6">Titanic</label>
+                    </div>
+                </div>
+                <div class="page-reservation-date-container">
+                    <div class="page-reservation-input-checkbox-container">Samedi 7 août</div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film7" id="film7" /><label for="film7">Joker</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film8" id="film8" /><label for="film8">L'empereur de Paris</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film9" id="film9" /><label for="film9">Rien à foutre</label>
+                    </div>
+                </div>
+                <div class="page-reservation-date-container">
+                    <div class="page-reservation-input-checkbox-container">Dimanche 8 août</div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film10" id="film10" /><label for="film10">Le Parrain</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film11" id="film11" /><label for="film11">I am legend</label>
+                    </div>
+                    <div class="page-reservation-input-checkbox-container">
+                        <input type="checkbox" name="film12" id="film12" /><label for="film12">Black Widow</label>
+                    </div>
+                </div>
+            </div>
+            <div class="page-reservation-contact">
+                <label for="prenom">Prénom</label><input type="text" name="prenom" id="prenom" />
+                <label for="nom">Nom</label><input type="text" name="nom" id="nom" />
+                <label for="email">E-mail</label><input type="text" name="email" id="email" />
+                <label for="telephone">Téléphone</label><input type="text" name="telephone" id="telephone" />
+                <label for="nombreDePlaces">Nombre de places</label><input type="number" name="nombreDePlaces"
+                    id="nombreDePlaces" />
+            </div>
+            <div class="button-container">
+                <button type="submit">Réserver</button>
+            </div>
+
+
+
+
+
+        </form>
+    </section>
+
+
+    <section id="newsletter">
+        <form>
+            <label id="newsletter-label" for="newsletter-input">Soyez tenu au courant de nos actualités</label>
+            <input id="newsletter-input" name="newsletter-input" placeholder="E-mail" />
+            <button id="newsletter-btn" type="button" action="submit">S'inscrire</button>
+        </form>
+    </section>
+
+
+    <footer>
+        <div class="footer-sous-container">
+            <a href="/index.html" class="nav-link">Accueil</a>
+            <a href="/index.html#presentation" class="nav-link">Présentation</a>
+            <a href="/index.html#programmation" class="nav-link">Programmation</a>
+            <a href="#" class="nav-link">Réservation</a>
+            <a href="/index.html#actualites" class="nav-link">Actualités</a>
+        </div>
+        <div class="footer-sous-container">
+            <a href="#" class="nav-link">Politique de cookies</a>
+            <a href="#" class="nav-link">Mentions légales</a>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

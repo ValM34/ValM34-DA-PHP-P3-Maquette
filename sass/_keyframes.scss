@@ -1,0 +1,71 @@
+@keyframes animation-logo {
+    0% {
+        transform: translate(0, 0);      
+    }
+    10% {
+        transform: translate(10px, 20px);      
+    }
+    22% {
+        transform: translate(20px, 0px);
+    }
+    35% {
+        transform: translate(10px, -20px);
+    }
+    48% {
+        transform: translate(0px, 0px);
+    }
+    61% {
+        transform: translate(-10px, 20px);
+    }
+    74% {
+        transform: translate(-20px, 0px);
+    }
+    87% {
+        transform: translate(-10px, -20px);
+    }
+    100% {
+        transform: translate(0, 0);      
+    }
+}
+
+@keyframes animation-txt-part {
+    0% {
+        opacity: 0;    
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes animation-burger-menu1 {
+    0% {
+        
+        transform: translateX(5000px) rotate(0);
+    }
+    100% {
+        
+        transform: translate(5000px, 12px) rotate(-135deg);
+    }
+}
+
+@keyframes animation-burger-menu2 {
+    0% {
+        transform: translateX(5000px) rotate(0) scale(100%, 100%);
+    }
+    100% {
+        
+        transform: translateX(5000px) scaleX(1%);
+    }
+}
+
+@keyframes animation-burger-menu3 {
+    0% {
+        
+        transform: translateX(5000px) rotate(0);
+    }
+    100% {
+        
+        transform: translate(5000px, -12px) rotate(135deg);
+    }
+}
+
